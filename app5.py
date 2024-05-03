@@ -30,7 +30,30 @@ while sw == True:
     if opcion == '1':
         nombre = input('Nombre del animal: ')
         fnt_agregar(nombre.upper())
-    
+     elif opcion == '2':
+     nombre = input('Nombre del animal: ')
+     posicion = int(input('Posición: '))
+     if posicion > len(list_animales_nombre):
+         input('Posición no valida <ENTER>') 
+     else:
+         list_animales_nombre.insert(posicion,nombre.upper())
+ elif opcion == '3':
+     if len(list_animales_nombre) == 0:
+         input('No hay animales registrados <ENTER>')
+     else:
+         list_animales_nombre.pop()
+         list_animales_codigo.pop()
+ elif opcion == '4':
+     if len(list_animales_nombre) == 0:
+         input('No hay animales registrados <ENTER>')
+     else:
+         posicion = int(input('Posición: '))
+         if posicion > len(list_animales_nombre):
+             input('Posición no valida <ENTER>') 
+         else:
+             list_animales_nombre.pop(posicion)
+             list_animales_codigo.pop(posicion)
+ 
 
     elif opcion == '5':
         fnt_mostrar()
